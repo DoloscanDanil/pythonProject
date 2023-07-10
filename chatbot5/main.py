@@ -111,7 +111,7 @@ def rate_movie ():
     # Retrieve received data
     data = request.json
     chat_id = data['chat_id']
-    movie_id = int(data['movieId'])
+    movie_id = int(data['movie_id'])
     rating = int(data['rating'])
 
     #Updated rating matrix
@@ -128,7 +128,7 @@ def rate_movie ():
                 writer.writerow(row)
             writeFile.close()
     readFile.close()
-    return jsonify({'status', 'successes'})
+    return jsonify({'status', 'success'})
 
 @app.route('/recommend', methods=['POST'])
 def recommend():
